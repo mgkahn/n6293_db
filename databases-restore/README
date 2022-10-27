@@ -1,0 +1,2 @@
+### DO NOT REMOVE THIS FILE. DIRECTORY CANNOT BE EMPTY
+Put Firebird backup file (.fbk) here. Server will convert ot current Firebird Server format and put into /firebird/database directory

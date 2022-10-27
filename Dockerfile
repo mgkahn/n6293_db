@@ -15,8 +15,8 @@ VOLUME ["/firebird"]
 
 EXPOSE 3050/tcp
 
-COPY ./databases/*.fdb /tmp/databases/
-COPY ./databases-restore/*.fbk /tmp/restore/
+COPY ./databases/* /tmp/databases/
+COPY ./databases-restore/* /tmp/restore/
 COPY ./etc/*  /tmp/etc/
 
 COPY docker-entrypoint.sh ${PREFIX}/docker-entrypoint.sh

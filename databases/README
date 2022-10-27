@@ -1,0 +1,3 @@
+### DO NOT REMOVE THIS FILE. DIRECTORY CANNOT BE EMPTY
+Put Firebird FDB files here. Must be the same version as Firebird server. 
+If older, put backup files (FBK) databases-restore, which will convert to current FDB
