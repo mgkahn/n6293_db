@@ -1,0 +1,2 @@
+*.fdb filter=lfs diff=lfs merge=lfs -text
+*.fbk filter=lfs diff=lfs merge=lfs -text
