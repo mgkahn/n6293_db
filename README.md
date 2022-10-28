@@ -4,7 +4,7 @@
 This is one of two docker images used for NURS 6293 Introduction to Database Systems at the University of Colorado Anschutz Medical Campus College of Nursing (https://catalog.ucdenver.edu/cu-anschutz/courses-a-z/nurs/) as part of its Masters level Nursing Informatics program. This docker image provides RDBMS support using Firebird 3.0.10. The second image provides a Ubuntu front end running HTML-5 based NOVNC along with class-required DBMS applications. The image is multi-architecture for ARM64 and AARCH64.
 
 ## Core features:
-- Dockerfile uses "builder" model using mgkahn/firebird3:latest on DockerHub. This is a simple clone of the FB 3.0.10 build by jacobalberty (https://github.com/jacobalberty/firebird-docker) altered only to support multi-architecture builds to support Apple Intel and Silcon Mac (and Windows). See https://github.com/mgkahn/Firebird3
+- Dockerfile uses "builder" model based on mgkahn/firebird3:latest on DockerHub. This is a simple clone of the FB 3.0.10 build by jacobalberty (https://github.com/jacobalberty/firebird-docker) altered to support multi-architecture builds to support Apple Intel and Silcon Mac (and Windows). See https://github.com/mgkahn/jacobalberty-firebird-docker.git BRANCH: 3.0.10_multiarch
 - Image accepts all ENV variables described in https://github.com/jacobalberty/firebird-docker. 
 - Image uses Docker-managed volume, named db_vol to persist the /firebird mount point which holds all FB databases (/firebird/data) and all configuration files (/firebird/etc).
 - Image communicates with UI docker container via docker-compose network called n6293_net.
@@ -17,7 +17,7 @@ This is one of two docker images used for NURS 6293 Introduction to Database Sys
 - FBD files used for NURS6293 are deidentified or synthetic. They are managed in GitHub using LFS (large file storage)
 
 ## To build Docker image:
-- Make sure mgkahn/Firebird3:latest is still on DockerHub (should be multiarch). If not, pull https://github.com/mgkahn/Firebird3.git and create multiarch version of Firebird 3.0.10 and use that image as the builder container in Dockerfile
+- Make sure mgkahn/firebird3:latest is still on DockerHub (should be multiarch). If not, pull https://github.com/mgkahn/jacobalberty-firebird-docker.git. Checkout branch 3.0.10_multiarch. Create multiarch version of Firebird 3.0.10 and use that image as the builder container in Dockerfile
 - Use Makefile commands:
   - Key variables for localization at top of Makefile
   - `make from-scratch`: uses --no-cache to create a pristine image **only on native architecture**
