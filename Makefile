@@ -81,7 +81,6 @@ run:
 	docker run -d --rm \
 		--publish ${PORT}:${PORT} \
 		--volume "${PWD}":/workspace:rw \
-		--volume "${HOME}"/Desktop/${SHARED}:/desktop:rw \
 		--volume ${VOLUME}:/firebird:rw \
 		--env ISC_PASSWORD=nurs6293 \
 		--env TZ=America/Denver \
